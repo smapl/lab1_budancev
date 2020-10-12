@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "l1"
+version = "0.1.0"
+description = ""
+authors = ["smapl <a.mustafin00@mail.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.19.2"
+matplotlib = "^3.3.2"
+loguru = "^0.5.3"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.6.0"
+black = {version = "^20.8b1", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
