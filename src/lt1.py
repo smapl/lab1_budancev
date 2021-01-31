@@ -3,18 +3,25 @@ import numpy as np
 from matplotlib import pyplot as plt
 from loguru import logger
 
-
+# функция модели
 def compute_hypothesis(X, theta):
-    return np.matmul(X, theta)
+    return np.matmul(X, theta)  # матричное произвеление двух массивов
 
 
+# на основе этой функции состовляется history
+# также считаетчся theta_temp
+# функция стоимости
 def compute_cost(X, y, theta):
-    m = X.shape[0]
-
+    m = X.shape[0]  # количество данных в вборке
+    # квадрат нужен, потому что сумма должна выйти положительной
+    # 1 / (2m)  = просто для удобства, без выражения ничего критичного не произодйет
     return 1 / (2 * m) * sum((compute_hypothesis(X, theta) - y) ** 2)
 
 
 def gradient_descend(X, y, theta, alpha, num_iter):
+    # alpha - шаг итерации = 0.01
+    # num_iter - количество операций = 1500
+    # theta - np.array([0, 0], float)
     history = list()
 
     m = X.shape[0]
@@ -52,7 +59,9 @@ def load_data(data_file_path):
 
 if __name__ == "__main__":
 
-    X, y = load_data("lab1data1.txt")
+    X, y = load_data(
+        "/home/smapl/univer/budancev_labs/lab_1/lab1_budancev/src/lab1data1.txt"
+    )  # X - первый столбец, y - второй столбец
 
     plt.title("Исходные данные")
     plt.scatter(X[:, 1], y, c="r", marker="x")
