@@ -1,15 +1,5 @@
-import numpy as np
+matrix = [(1, 2), (13, 22), (41, 52), (11, 20), (6, 9)]
+matrix_2 = [1, 2, 13, 22, 41, 52, 11, 20, 6, 9]
 
-
-# def test(x, y):
-#     return x @ y
-
-
-# a = np.array([1, 2, 4, 5])
-# b = np.array([1, 2, 4, 5])
-
-# res = test(a, b)
-
-# print(test)
-
-print(np.array([0, 0]))
+X = matrix_2[:, 1:]
+print(X)
