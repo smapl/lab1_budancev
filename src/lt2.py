@@ -55,10 +55,10 @@ def gradient_descend(X, y, theta, alpha, num_iter):
 # стандартизация признаков
 def scale_features(X):
 
-    new_X = X[:, 1:]
+    new_X = X[:, 1:]  # ????
     # np.mean - срденее арифметическое значение массива
     # np.std - средне квадратичное отклонениезначений элементов массива
-    z = (new_X - np.mean(new_X, axis=0)) // np.std(new_X, axis=0)
+    z = (new_X - np.mean(new_X, axis=0)) // np.std(new_X, axis=0)  # какая-то формула
     array_one = np.ones((z.shape[0], 1))  # массив заполнен единицами
 
     finish_z = np.column_stack((array_one, z))  # соединяет массивы повертикали
@@ -73,8 +73,6 @@ def scale_features(X):
 # нормальное уравнение
 # выводит точную theta, т.к. градиентный спуск дает лишь приближенную
 # а иногда градиентный спуск может и вовсе обосраться
-# ошибка операнды не могут транслироваться вместе с фигурами
-# Exception has occurred: ValueError
 
 
 def normal_equation(X, y):
